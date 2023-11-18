@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('UTS/home');
    
 });
+Route::get('/', function () {
+    return view('UTS/produk');
+   
+});
+
+
 
 Route::get('about', function () {
     //$nama = 'Muhammad Hafizh Azman Matondang';
