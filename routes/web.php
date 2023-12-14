@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\mahasiswaController;
+use App\Http\Controllers\mahasiswaController2;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -8,40 +10,42 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
-Route::get('/', function () {
-    return view('UTS/home');
-   
-});
-Route::get('/', function () {
-    return view('UTS/produk');
-   
-});
+/*Route::get('/', function () {
+    return view ('home');
 
-
+});
 
 Route::get('about', function () {
-    //$nama = 'Muhammad Hafizh Azman Matondang';
-    //$prodi = 'Teknologi Informasi';
-    //return view('about')->with('nama', $nama);
-    return view('about');
-   
+    $nama = 'Mhd Hafizh Azman Matondang';
+    return view ('about');
+    
 });
 
 Route::get('profile', function () {
-    $nama = 'Muhammad Hafizh Azman Matondang';
-    return view('profile')->with('nama', $nama);
-   
+    return view ('profile');
+    
 });
 
 Route::get('mahasiswa', function () {
-    $npm = [123,124,125,126];
-    $nama = ['Muhammad','Hafizh','Azman','Matondang'];
-    $jumlah = count($npm);
-    return view('mahasiswa',compact('npm','jumlah','nama'));  
+    return view ('mahasiswa');
     
 });
+
+Route::get('tugas', function () {
+    return view ('tugas');
+    
+});
+
+Route::get('/', function () {
+    return view ('home');
+
+});
+*/
+/*Route::get('/',[mahasiswaController2::class,'index']);*/
+
+Route::resource('/',mahasiswaController2::class);
